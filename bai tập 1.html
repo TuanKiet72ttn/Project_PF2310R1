@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 1: Hiển thị ngày-tháng-năm</title>
+</head>
+<body>
+    <script>
+        let Day = parseInt(prompt("Enter the Date"));
+        let Month = parseInt(prompt("Enter the Month"));
+        let Year = parseInt(prompt("Enter the Year"));
+
+        let formattedDay = (Day < 10 ? '0' : '') + Day;
+        let formattedMonth = (Month < 10 ? '0' : '') + Month;
+        let formattedDate = formattedDay + '-' + formattedMonth + '-' + Year;
+        document.write("Formatted Date: " + formattedDate);
+    </script>
+</body>
+</html>
