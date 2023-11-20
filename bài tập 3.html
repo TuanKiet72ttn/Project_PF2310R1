@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 3: Công cụ tính lãi suất gửi tiết kiệm</title>
+</head>
+<body>
+    <script>
+        let A = parseFloat(prompt("Số tiền bạn muốn gửi"));
+        let N = parseFloat(prompt("Số năm bạn muốn gửi"));
+        let r = parseFloat(prompt("lãi suất năm gửi tiết kiệm"))
+
+        // số tiền lãi hàng năm
+        let X = A * r
+        document.write("Số tiền lãi hàng năm: " + X);
+        document.write("<br>")
+        // số tiền lãi sau n năm
+        let Y = A * N * r
+        document.write("Số tiền lãi sau n năm: " + Y);
+        document.write("<br>")
+        // Số tiền gốc và lãi sau khi gửi n năm
+        let Z = A * (1+ N * r)
+        document.write("Số tiền gốc lãi sau n năm: " + Z);
+        document.write("<br>")
+    </script>
+</body>
+</html>
