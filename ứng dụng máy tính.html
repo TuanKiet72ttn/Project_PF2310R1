@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+    <h2>Caculator</h2><br>
+    <form>
+        <input type="number" id="number1">
+        <input type="number" id="number2"><br>
+        <button type="button" onclick="Addition()">Addition(+)</button>
+        <button type="button" onclick="Substraction()">Substraction(-)</button>  
+        <button type="button" onclick="Multiplication()">Multiplication(x)</button>  
+        <button type="button" onclick="Division()">Division(/)</button>  
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function Addition() {
+            let num1 = parseFloat(document.getElementById("number1").value);
+            let num2 = parseFloat(document.getElementById("number2").value);
+            let result = num1 + num2;
+            document.getElementById("result").innerText = "Kết quả = " + result; 
+        }
+        function Substraction() {
+            let num1 = parseFloat(document.getElementById("number1").value);
+            let num2 = parseFloat(document.getElementById("number2").value);
+            let result = num1 - num2;
+            document.getElementById("result").innerText = "Kết quả = " + result; 
+        }
+        function Multiplication() {
+            let num1 = parseFloat(document.getElementById("number1").value);
+            let num2 = parseFloat(document.getElementById("number2").value);
+            let result = num1 * num2;
+            document.getElementById("result").innerText = "Kết quả = " + result; 
+        }
+        function Division() {
+            let num1 = parseFloat(document.getElementById("number1").value);
+            let num2 = parseFloat(document.getElementById("number2").value);
+            let result = num1 / num2;
+            document.getElementById("result").innerText = "Kết quả = " + result; 
+        }
+    </script>
+</body>
+</html>
