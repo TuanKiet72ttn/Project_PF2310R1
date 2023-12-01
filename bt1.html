@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 30px;
+        }
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+        </tr>
+        <tr>
+            <td><input type="number" id="Amount"></td>
+            <td>
+                <select name="FromCurrency" id="From Currency">
+                    <option value="VND">VND</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                </select>
+            </td>
+            <td>
+                <select name="ToCurrency" id="To Currency">
+                    <option value="VND">VND</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <button type="button" onclick="Convert()"> Convert </button>
+    <p id="result"></p>
+
+    <script>
+        function Convert() {
+            let Amount = document.getElementById("Amount").value;
+            let FromCurrency = document.getElementById("From Currency").value;
+            let ToCurrency = document.getElementById("To Currency").value;
+
+            let Giatriquydoi = {
+                USD: {
+                    VND: 24200,
+                    EUR: 0.88,
+                    GBP: 0.85
+                },
+                EUR: {
+                    VND: 26800,
+                    USD: 1.10,
+                    GBP: 0.98
+                },
+                GBP: {
+                    VND: 27800,
+                    USD: 1.12,
+                    EUR: 1.05
+                },
+                VND: {
+                    USD: 0.00004132,
+                    EUR: 0.00003731,
+                    GBP: 0.00003597
+                }
+            };
+            let result =  Amount * Giatriquydoi[FromCurrency][ToCurrency];
+            document.getElementById("result").innerHTML = result.toFixed(2);
+        }
+    </script>
+</body>
+</html>
