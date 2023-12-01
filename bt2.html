@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính chỉ số cân nặng của cơ thể (JS)</title>
+</head>
+<body>
+    <script>
+        let weight = prompt("nhập số cân nặng của bạn (kg): ");
+        let height = prompt("nhập chiều cao của bạn (m): ");
+       
+        if (!isNaN(weight) && !isNaN(height) && weight > 0 && height > 0) {
+            let BMI = weight / (height * height);
+
+            if (BMI > 40) {
+                document.write("Béo phì độ III");
+            } else if (BMI >= 35) {
+                document.write("Béo phì độ II");
+            } else if (BMI >= 30) {
+                document.write("Béo phì độ I");
+            } else if (BMI >= 25) {
+                document.write("Thừa cân");
+            } else if (BMI >= 18.5) {
+                document.write("Bình thường");
+            } else if (BMI >= 17) {
+                document.write("Gầy độ I");
+            } else if (BMI >= 16) {
+                document.write("Gầy độ II");
+            } else if (BMI < 16 ) {
+                document.write("Gầy độ III");
+            } 
+        } else {
+            document.write("hãy nhập lại cân nặng và chiều cao hợp lệ")
+        }
+        
+    </script>
+</body>
+</html>
