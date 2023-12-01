@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra cứu giá hoa quả</title>
+</head>
+<body>
+    <h2>Giá Hoa Quả</h2>
+    <input type="text" id="HoaQua">
+    <button type="button" onclick="XemGia()">Xem Giá</button>
+
+    <script>
+        function XemGia() {
+            let hoaquaInput = document.getElementById("HoaQua").value;
+
+            if (hoaquaInput === "Ổi") {
+                document.write ("20000 VNĐ/kg");
+            } else if (hoaquaInput === "Dưa Hấu") {
+                document.write ("20000 VNĐ/kg");
+            } else if (hoaquaInput === "Táo") {
+                document.write ("30000 VNĐ/kg");
+            } else if (hoaquaInput === "Xoài") {
+                document.write ("30000 VNĐ/kg");
+            } else if (hoaquaInput === "Cam") {
+                document.write ("40000 VNĐ/kg");
+            } else if (hoaquaInput === "Chôm Chôm") {
+                document.write ("40000 VNĐ/kg");
+            } else if (hoaquaInput === "Măng Cụt") {
+                document.write ("50000 VNĐ/kg");
+            }
+        }
+    </script>
+</body>
+</html>
