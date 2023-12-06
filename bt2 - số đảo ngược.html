@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nhập vào 1 số: <br>
+    <input type="number" id="number"> <br>
+    <button type="button" onclick="OK()">OK</button>
+    <button type="button">Cancel</button>
+    
+    <script>
+        function OK() {
+            let number = document.getElementById("number").value;
+            let resersedNumber = 0;
+
+            while (number > 0) {
+                let digit = number % 10;
+                resersedNumber = resersedNumber * 10 + digit;
+                number = Math.floor(number / 10);
+            }
+           document.write("Số đảo ngược là:  " + resersedNumber);
+        }
+    </script>
+</body>
+</html>
