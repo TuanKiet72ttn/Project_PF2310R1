@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng cửu chương</title>
+</head>
+<body>
+    <h2>Bảng Cửu Chương</h2>
+    <table id="multiplicationTable"></table>
+
+    <script>
+        function multiplicationTable() {
+            let rows = "";
+            for (let i = 2; i <= 10 ; i++) {
+                let row = "<tr>"
+                for (let j = 1; j <= 10; j++) {
+                    let test = i + " x " + j + " = " + (i * j);
+                    row += "<td>" + test + "</td>"; 
+                }
+                row += "</tr>";
+                rows += row;
+            }
+            let table = document.getElementById("multiplicationTable");
+            table.innerHTML = rows;
+        }
+        multiplicationTable();
+    </script>
+</body>
+</html>
