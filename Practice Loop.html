@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập</title>
+</head>
+<body>
+    Bài 1:
+    <h2>Dãy số từ 1 đến 100: </h2>
+    <p id="result"></p>
+</body>
+<script>
+    //Bài 1
+    for (num = 1; num <= 100; num++) {
+        document.write(num + "<br>")
+        if (num === 99) {
+            document.write ("Đã hoàn thành")
+        }
+    }
+
+    // Bài 2
+    let temp = prompt ("nhập vào nhiệt độ cơ thể của bạn: ");
+    if (temp > 100) {
+        alert ("giảm nhiệt độ")
+    } else if (temp < 20) {
+        alert ("cần tăng nhiệt độ")
+    } else {
+        alert ("Cơ thể bạn bình thường")
+    }
+
+    // Bài 3
+    let a = 0;
+    let b = 1;
+    for (i = 0; i < 19; i++) {
+        let c = a + b;
+        document.write(c + "<br>");
+        a = b;
+        b = c;
+    }
+
+    // Bài 4:
+    let a = 0;
+    let b = 1;
+    let divisionFive = null;
+    while (divisibleByFive === null) {
+        let next = a + b;
+        if (next % 5 === 0) {
+            divisibleByFive = next;
+        }
+        a = b;
+        b = next;
+    }
+
+    // Bài 5:
+    let a = 0;
+    let b = 1;
+    document.write (b);
+    let total = b;
+    for (i = 0; i < 19; i++) {
+        let c = a + b;
+        document.write(c + "<br>");
+        total += c;
+        a = b;
+        b = c;
+    }
+    document.write("Tổng của 20 số đầu tiên trong dãy Fibonacci là: " + total);
+
+    // Bài 6:
+    let count = 0;
+    let number = 1;
+    let sum = 0;
+
+    while (count < 30) {
+        if (number % 7 === 0) {
+            sum += number;
+            count++;
+        }
+        number++;
+    }
+
+    document.write("Tổng của 30 số chia hết cho 7 đầu tiên là: " + sum);
+
+    // Bài 7:
+    for (let i = 1; i <= 100; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            document.write("FizzBuzz" + "<br>");
+        } else if (i % 3 === 0) {
+            document.write("Fizz" + "<br>");
+        } else if (i % 5 === 0) {
+            document.write("Buzz" + "<br>");
+        } else {
+            document.write(i + "<br>");
+        }
+    }
+</script>
+</html>
