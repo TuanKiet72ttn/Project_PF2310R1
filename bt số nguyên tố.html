@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách 20 số nguyên tố đầu tiên</title>
+</head>
+<body>
+    <h2>20 Số nguyên tố đầu tiên trong dãy là: </h2>
+    <input type="number" id="num">
+    <button type="button" onclick="display()">Hiển Thị</button>
+    <ul id="primeList"></ul>
+</body>
+<script>
+    function isPrime(num) {
+        if (num <= 1) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) return false;
+        }
+        return true;
+    }
+    function display() {
+        let numbers = parseInt(document.getElementById("num").value);
+        let count = 0;
+        let N = 2;
+        let primeList = document.getElementById("primeList");
+
+        while (count < numbers) {
+            if (isPrime(N)) {
+                const listItem = document.createElement("li");
+                listItem.textContent = N;
+                primeList.appendChild(listItem);
+                count++;
+            }
+            N++;
+        }
+    }
+</script>
+</html>
