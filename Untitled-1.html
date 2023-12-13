@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sử dụng các hàm có sẵn</title>
+</head>
+<body>
+    <button onclick="Bai1()">Bài 1</button> 
+    <br>
+    <button onclick="Bai2()">Bài 2</button>
+    <br>
+    <button onclick="Bai3()">Bài 3</button>
+    <br>
+</body>
+<script>
+    // Bài 1
+    function Bai1() {
+        let mycolor = ["Red", "Green", "White", "Black"];
+        console.log(mycolor.join());
+        console.log(mycolor.join("+"));
+        console.log(mycolor.toString());
+    }
+    // Bài 2
+    function Bai2() {
+        let number = [0,2,5,4,6,8];
+        let arr = []
+        for (i=0; i < number.length; i++) {
+            if (number[i] % 2 == 0 && number[i+1] % 2 == 0) {
+                arr.push(number[i] + "-")
+            } else {
+                arr.push(number[i])    
+            }
+        }
+        console.log (arr.join(""));
+    }
+    // Bài 3
+    function Bai3() {
+        let str = prompt("nhâp vào 1 câu bất kỳ: ");
+        let convertStr = "";
+        for (i=0; i < str.length; i++) {
+            let char = str[i];
+            if (char >= "a" && char <= "z") {
+                convertStr += char.toUpperCase();
+            } else {
+                convertStr += char.toLowerCase();
+            }
+        }
+        console.log("Chuỗi sau khi chuyển đổi là:", convertStr);
+    }
+</script>
+</html>
