@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính năm âm lịch theo năm dương lịch</title>
+</head>
+<body>
+    <input type="number" id="year">
+    <button onclick="LunarYear()">Chuyển đổi</button>
+    <p id="result"></p>
+</body>
+<script>
+    function LunarYear() {
+        let Year = +document.getElementById("year").value;
+        let Can = ["Canh", "Tân", "Nhâm", "Quý", "Giáp", "Ất", "Bính", "Đinh", "Mậu", "Ký"];
+        let Chi = ["Thân", "Dậu", "Tuất", "Hợi", "Tý", "Sửu", "Dần", "Mẹo", "Thìn", "Tỵ", "Ngọ", "Thân"];
+
+        
+        // for (x=0; x<10; x++) {
+        //     if (Year % 10 === x) {
+        //         Can = Can[x]
+        //     }
+        // }
+        // for (y=0; y<12; y++) {
+        //     if (Year % 12 === y) {
+        //         Chi = Chi[y]
+        //     }
+        // }
+        // let LunarYear = Can + " " + Chi;
+        // document.getElementById("result").innerText = "Năm âm lịch của năm " + Year + " là: " + LunarYear;
+
+        let CanIndex = Year % 10;
+        let ChiIndex = Year % 12;
+
+        let LunarYear = Can[CanIndex] + " " + Chi[ChiIndex];
+        document.getElementById("result").innerText = "Năm âm lịch của năm " + Year + " là: " + LunarYear;
+    }
+</script>
+</html>
