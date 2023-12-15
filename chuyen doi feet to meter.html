@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Feet</h2>  
+    <input type="number" id="Feet">
+    <button onclick="convert1()">Convert to Meters</button>
+    <span id="result1"></span>
+    <br>
+
+    <h2>Meters</h2>  
+    <input type="number" id="Meters">
+    <button onclick="convert2()">Convert to Feet</button>
+    <span id="result2"></span>
+
+</body>
+<script>
+        function convert1() {
+            let Feet = parseFloat(document.getElementById("Feet").value);
+            let Meters = 0.305 * Feet;
+            document.getElementById("result1").innerText = "Meters: " + Meters;
+        }
+        function convert2() {
+            let Meters = parseFloat(document.getElementById("Meters").value);
+            let Feet = 3.279 * Meters;
+            document.getElementById("result2").innerText = "Feet: " + Feet;
+        }
+</script>
+</html>
