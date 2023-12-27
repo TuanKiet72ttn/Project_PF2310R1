@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="game" width="800" height="600" style="border: 3px solid rgb(0, 0, 0)"></canvas>
+</body>
+<script>
+    let carXPosition = 20;
+    let carYPosition = 50; // Giá trị ban đầu của hình chữ nhật
+    let carWidth = 150;
+    let carHeight = 100;
+    let gameTopPosition = 0;
+    let gameBottomPosition = 500; // Vùng di chuyển tối đa theo chiều dọc (600 - chiều cao hình chữ nhật)
+    let timeLoop = 16;
+    let game = document.getElementById("game").getContext("2d");
+    function drawCar() {
+        game.beginPath();
+        game.fillStyle='red';
+        game.fillRect(20, carYPosition, 150, 100);
+    }
+
+    function moveUp() {
+        game.clearRect(20, carYPosition, 150, 100);
+
+        if (yPositon > 0) {
+            yPositon--;
+        }
+        drawCar();
+    }
+    function moveCarDown() {
+        game.clearRect(20, carYPosition, 150, 100);
+
+        if (carYPosition + 100 < 600) {
+            carYPosition++;
+        }
+
+        drawCar();
+    }
+
+    let yDistance = 1;
+    function moveCar() {
+        game.clearRect(carXPosition, carYPosition, carWidth, carHeight);
+
+        let isTouchTop = carYPosition < gameTopPosition;
+        let isTouchBottom = carYPosition + carHeight > gameBottomPosition;
+        if (isTouchTop || isTouchBottom) {
+            yDistance = -yDistance;
+        }
+
+        carYPosition += yDistance;
+        drawCar();
+    }
+    setInterval(moveCar, timeLoop);
+</script>
+</html>
